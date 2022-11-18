@@ -1,0 +1,220 @@
+$white: hsl(0, 0%, 100%);
+$light-grayish-violet: hsl(270, 3%, 87%);
+$dark-grayish-violet: hsl(279, 6%, 55%);
+$very-dark-violet: hsl(278, 68%, 11%);
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    font-size: 18px;
+    font-family: 'Space Grotesk', sans-serif;
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        
+
+        div.container {    
+            width: 375px;
+            height: 100%;
+
+            header {
+                height: 13.5rem;
+                background-image: url(../images/bg-main-mobile.png);
+                padding-top: .1rem;
+
+                div.card-holder {
+                    position: relative;
+                    height: 12rem;
+                    margin: 1rem 1.15rem;
+
+                    div.card {
+                        width: 15.5rem;
+                        height: 10rem;
+                        background-size: contain;
+                        background-position: center;
+                        background-repeat: no-repeat;
+
+                        color: $white;
+                    }
+
+                    div.card-back {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        background-image: url(../images/bg-card-back.png);
+                        z-index: 0;
+
+                        span {
+                            position: absolute;
+                            top: 4.6rem;
+                            right: 2rem;
+                            font-size: .5rem;
+                        }
+                    }
+
+                    div.card-front {
+                        position: absolute;
+                        background-image: url(../images/bg-card-front.png);
+                        overflow: visible;
+                        bottom: -2.8rem;
+                        z-index: 2;
+
+                        padding: 1.7rem 1.2rem;
+
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        img {
+                            width: 3rem;
+                        }
+
+                        p {
+                            font-size: 1.03rem;
+                            text-align: center;
+                            letter-spacing: .075rem;
+                            margin-bottom: .8rem;
+
+                        }
+
+                        div.info-wrapper {
+                            display: flex;
+                            justify-content: space-between;
+
+                            span {
+                                font-size: .5rem;
+                                letter-spacing: .075rem;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                }
+            }
+
+            main {
+                background-color: $white;
+                margin-top: 3.5rem;
+                
+                form {
+                    padding: 1rem;
+
+                    input {
+                        border-color: $light-grayish-violet;
+                        border-style: solid;
+                        border-width: 1px;
+                        border-radius: .5rem;
+                        padding: 0.5rem 0.5rem 0.5rem 1rem;
+
+                        &::placeholder {
+                            color: $light-grayish-violet;
+                        }
+
+                        &:focus {
+                            outline-color: $very-dark-violet;
+                            outline-width: 1px;
+                        }
+                    }
+
+
+                    label, 
+                    legend {
+                        text-transform: uppercase;
+                        font-size: .69rem;
+                        letter-spacing: .1rem;
+                        color: $very-dark-violet;
+                        padding-bottom: .4rem;
+                    }
+
+                    fieldset {
+                        border: none;
+                        display: flex;
+                        
+                        input {
+                            width: 50%;
+                            margin-right: .5rem;
+                        }
+                    }
+
+                    div.input-field {
+                        display: flex;
+                        position: relative;
+                        flex-direction: column;
+                        margin-bottom: 1.3rem;
+                
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+
+                        &.error {
+                            input {
+                                border-color: red;
+                            }
+
+                            &::after {
+                                content: attr(data_after);
+                                position: absolute;
+                                right: 0;
+                                bottom: -1.1rem;
+                                font-size: 0.65rem;
+                                font-weight: 100;
+                                color: red;
+                                
+                            }
+                        }
+
+                    }
+
+                    div.input-wrapper {
+                        display: flex;
+                        margin-bottom: 1.5rem;
+
+                        fieldset {
+                            position: relative;
+                            width: 50%;
+
+                            &.error {
+                                input.error {
+                                    border-color: red;
+                                }
+    
+                                &::after {
+                                    content: attr(data_after);
+                                    position: absolute;
+                                    left: 0;
+                                    bottom: -1.1rem;
+                                    font-size: 0.65rem;
+                                    font-weight: 100;
+                                    color: red;
+                                    
+                                }
+                            }
+                        }
+
+                        div.input-field {
+                            width: 50%;
+                        }
+
+                        
+                    }
+
+                    button {
+                        color: $white;
+                        width: 100%;
+                        border-style: solid;
+                        border-width: 1px;
+                        border-radius: .35rem;
+                        padding: .8rem;
+                        background-color: $very-dark-violet;
+                        
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-family: "Space Grotesk", sans-serif;
+}
+* body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+* body div.container {
+  width: 375px;
+  height: 100%;
+}
+* body div.container header {
+  height: 13.5rem;
+  background-image: url(../images/bg-main-mobile.png);
+  padding-top: 0.1rem;
+}
+* body div.container header div.card-holder {
+  position: relative;
+  height: 12rem;
+  margin: 1rem 1.15rem;
+}
+* body div.container header div.card-holder div.card {
+  width: 15.5rem;
+  height: 10rem;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: hsl(0deg, 0%, 100%);
+}
+* body div.container header div.card-holder div.card-back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: url(../images/bg-card-back.png);
+  z-index: 0;
+}
+* body div.container header div.card-holder div.card-back span {
+  position: absolute;
+  top: 4.6rem;
+  right: 2rem;
+  font-size: 0.5rem;
+}
+* body div.container header div.card-holder div.card-front {
+  position: absolute;
+  background-image: url(../images/bg-card-front.png);
+  overflow: visible;
+  bottom: -2.8rem;
+  z-index: 2;
+  padding: 1.7rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+* body div.container header div.card-holder div.card-front img {
+  width: 3rem;
+}
+* body div.container header div.card-holder div.card-front p {
+  font-size: 1.03rem;
+  text-align: center;
+  letter-spacing: 0.075rem;
+  margin-bottom: 0.8rem;
+}
+* body div.container header div.card-holder div.card-front div.info-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+* body div.container header div.card-holder div.card-front div.info-wrapper span {
+  font-size: 0.5rem;
+  letter-spacing: 0.075rem;
+  text-transform: uppercase;
+}
+* body div.container main {
+  background-color: hsl(0deg, 0%, 100%);
+  margin-top: 3.5rem;
+}
+* body div.container main form {
+  padding: 1rem;
+}
+* body div.container main form input {
+  border-color: hsl(270deg, 3%, 87%);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+}
+* body div.container main form input::-moz-placeholder {
+  color: hsl(270deg, 3%, 87%);
+}
+* body div.container main form input:-ms-input-placeholder {
+  color: hsl(270deg, 3%, 87%);
+}
+* body div.container main form input::placeholder {
+  color: hsl(270deg, 3%, 87%);
+}
+* body div.container main form input:focus {
+  outline-color: hsl(278deg, 68%, 11%);
+  outline-width: 1px;
+}
+* body div.container main form label,
+* body div.container main form legend {
+  text-transform: uppercase;
+  font-size: 0.69rem;
+  letter-spacing: 0.1rem;
+  color: hsl(278deg, 68%, 11%);
+  padding-bottom: 0.4rem;
+}
+* body div.container main form fieldset {
+  border: none;
+  display: flex;
+}
+* body div.container main form fieldset input {
+  width: 50%;
+  margin-right: 0.5rem;
+}
+* body div.container main form div.input-field {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  margin-bottom: 1.3rem;
+}
+* body div.container main form div.input-field:last-child {
+  margin-bottom: 0;
+}
+* body div.container main form div.input-field.error input {
+  border-color: red;
+}
+* body div.container main form div.input-field.error::after {
+  content: attr(data_after);
+  position: absolute;
+  right: 0;
+  bottom: -1.1rem;
+  font-size: 0.65rem;
+  font-weight: 100;
+  color: red;
+}
+* body div.container main form div.input-wrapper {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+* body div.container main form div.input-wrapper fieldset {
+  position: relative;
+  width: 50%;
+}
+* body div.container main form div.input-wrapper fieldset.error input.error {
+  border-color: red;
+}
+* body div.container main form div.input-wrapper fieldset.error::after {
+  content: attr(data_after);
+  position: absolute;
+  left: 0;
+  bottom: -1.1rem;
+  font-size: 0.65rem;
+  font-weight: 100;
+  color: red;
+}
+* body div.container main form div.input-wrapper div.input-field {
+  width: 50%;
+}
+* body div.container main form button {
+  color: hsl(0deg, 0%, 100%);
+  width: 100%;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 0.35rem;
+  padding: 0.8rem;
+  background-color: hsl(278deg, 68%, 11%);
+}/*# sourceMappingURL=main.css.map */
