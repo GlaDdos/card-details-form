@@ -68,6 +68,19 @@ form.addEventListener('submit', event => {
         input_expire_month.closest('fieldset').classList.remove('error');
     }
 
+    if(input_cvs.value == '') {
+        input_cvs.closest('div.input-field').setAttribute('data_after', 'Can\'t be blank');
+        input_cvs.closest('div.input-field').classList.add('error');
+    } else if (!validateOnlyDigits(input_cvs.value)) {
+        input_cvs.closest('div.input-field').setAttribute('data_after', 'Wrong format, numbers only');
+        input_cvs.closest('div.input-field').classList.add('error');
+    } else if(input_cvs.value.length != 3) {
+        input_cvs.closest('div.input-field').setAttribute('data_after', 'Incorrect cvs length');
+        input_cvs.closest('div.input-field').classList.add('error');
+    } else {
+        input_cvs.closest('div.input-field').classList.remove('error');
+    }
+
 });
 
 input_card_number.onkeyup = function (e) {
