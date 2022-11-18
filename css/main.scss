@@ -21,7 +21,7 @@ $very-dark-violet: hsl(278, 68%, 11%);
 
         div.container {    
             width: 375px;
-            height: 100%;
+            background-color: $white;
 
             header {
                 height: 13.5rem;
@@ -98,7 +98,6 @@ $very-dark-violet: hsl(278, 68%, 11%);
             }
 
             main {
-                background-color: $white;
                 margin-top: 3.5rem;
                 
                 form {
@@ -213,6 +212,19 @@ $very-dark-violet: hsl(278, 68%, 11%);
                         background-color: $very-dark-violet;
                         
                     }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    * {
+        body {
+            div.container {
+                flex-direction: row;
+                header {
+                    background-image: url(../images/bg-main-desktop.png);
                 }
             }
         }

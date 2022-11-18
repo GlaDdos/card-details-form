@@ -14,7 +14,7 @@
 }
 * body div.container {
   width: 375px;
-  height: 100%;
+  background-color: hsl(0deg, 0%, 100%);
 }
 * body div.container header {
   height: 13.5rem;
@@ -77,7 +77,6 @@
   text-transform: uppercase;
 }
 * body div.container main {
-  background-color: hsl(0deg, 0%, 100%);
   margin-top: 3.5rem;
 }
 * body div.container main form {
@@ -171,4 +170,13 @@
   border-radius: 0.35rem;
   padding: 0.8rem;
   background-color: hsl(278deg, 68%, 11%);
+}
+
+@media (min-width: 768px) {
+  * body div.container {
+    flex-direction: row;
+  }
+  * body div.container header {
+    background-image: url(../images/bg-main-desktop.png);
+  }
 }/*# sourceMappingURL=main.css.map */
