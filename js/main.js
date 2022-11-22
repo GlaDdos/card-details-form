@@ -2,7 +2,9 @@ const card_number = document.getElementById('card-nr');
 const card_owner = document.getElementById('owner');
 const exp_date = document.getElementById('exp-date');
 const cvs_number = document.getElementById('cvs-number');
+const button = document.getElementById('success-button');
 const form = document.querySelector('form');
+const success_div = document.getElementsByClassName('success-message')[0];
 
 
 const input_card_owner = document.getElementById('name');
@@ -13,10 +15,12 @@ const input_cvs = document.getElementById('card-cvs');
 
 form.addEventListener('submit', event => {
     event.preventDefault();
+    let error = false;
 
     if (input_card_owner.value == '') {
         input_card_owner.closest('div.input-field').setAttribute('data_after', 'Can\'t be blank');
         input_card_owner.closest('div.input-field').classList.add('error');
+        error = true;
     } else {
         input_card_owner.closest('div.input-field').classList.remove('error');
     }
@@ -24,12 +28,15 @@ form.addEventListener('submit', event => {
     if (input_card_number.value == '') {
         input_card_number.closest('div.input-field').setAttribute('data_after', 'Can\'t be blank');
         input_card_number.closest('div.input-field').classList.add('error');
+        error = true;
     } else if (!validateOnlyDigits(input_card_number.value)) {
         input_card_number.closest('div.input-field').setAttribute('data_after', 'Wrong format, numbers only');
         input_card_number.closest('div.input-field').classList.add('error');
+        error = true;
     } else if (input_card_number.value.length != 16) {
         input_card_number.closest('div.input-field').setAttribute('data_after', 'Wrong format, incorrect length');
         input_card_number.closest('div.input-field').classList.add('error');
+        error = true;
     } else {
         input_card_number.closest('div.input-field').classList.remove('error');
     }
@@ -38,14 +45,17 @@ form.addEventListener('submit', event => {
         input_expire_month.closest('fieldset').setAttribute('data_after', 'Can\'t be blank');
         input_expire_month.closest('fieldset').classList.add('error');
         input_expire_month.classList.add('error');
+        error = true;
     } else if (!validateOnlyDigits(input_expire_month.value)) {
         input_expire_month.closest('fieldset').setAttribute('data_after', 'Wrong format, numbers only');
         input_expire_month.closest('fieldset').classList.add('error');
         input_expire_month.classList.add('error');
+        error = true;
     } else if (Number(input_expire_month.value) > 12 || Number(input_expire_month.value) < 1) {
         input_expire_month.closest('fieldset').setAttribute('data_after', 'Wrong month format');
         input_expire_month.closest('fieldset').classList.add('error');
         input_expire_month.classList.add('error');
+        error = true;
     } else {
         input_expire_month.classList.remove('error');
     }
@@ -54,9 +64,11 @@ form.addEventListener('submit', event => {
         input_expire_year.closest('fieldset').setAttribute('data_after', 'Can\'t be blank');
         input_expire_year.closest('fieldset').classList.add('error');
         input_expire_year.classList.add('error');
+        error = true;
     } else if (!validateOnlyDigits(input_expire_year.value)) {
         input_expire_year.closest('fieldset').setAttribute('data_after', 'Wrong format, numbers only');
         input_expire_year.closest('fieldset').classList.add('error');
+        error = true;
     } else {
         input_expire_year.classList.remove('error');
     }
@@ -71,20 +83,33 @@ form.addEventListener('submit', event => {
     if(input_cvs.value == '') {
         input_cvs.closest('div.input-field').setAttribute('data_after', 'Can\'t be blank');
         input_cvs.closest('div.input-field').classList.add('error');
+        error = true;
     } else if (!validateOnlyDigits(input_cvs.value)) {
         input_cvs.closest('div.input-field').setAttribute('data_after', 'Wrong format, numbers only');
         input_cvs.closest('div.input-field').classList.add('error');
+        error = true;
     } else if(input_cvs.value.length != 3) {
         input_cvs.closest('div.input-field').setAttribute('data_after', 'Incorrect cvs length');
         input_cvs.closest('div.input-field').classList.add('error');
+        error = true;
     } else {
         input_cvs.closest('div.input-field').classList.remove('error');
     }
 
+    if(!error) {
+        form.style.display = "none";
+        success_div.style.display = "flex";
+    }
+});
+
+button.addEventListener('click', function(e) {
+    form.reset();
+    form.style.display = "block";
+    success_div.style.display = "none";
+
 });
 
 input_card_number.onkeyup = function (e) {
-    console.log(validateOnlyDigits(this.value));
     card_number.innerText = formatCardNumber(this.value);
 }
 

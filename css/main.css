@@ -162,7 +162,8 @@
 * body div.container main form div.input-wrapper div.input-field {
   width: 50%;
 }
-* body div.container main form button {
+* body div.container main button {
+  cursor: pointer;
   color: hsl(0deg, 0%, 100%);
   width: 100%;
   border-style: solid;
@@ -170,6 +171,34 @@
   border-radius: 0.35rem;
   padding: 0.8rem;
   background-color: hsl(278deg, 68%, 11%);
+}
+* body div.container main button:active {
+  transform: scale(0.95);
+  opacity: 0.9;
+}
+* body div.container main div.success-message {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+}
+* body div.container main div.success-message img {
+  margin-top: 1.4rem;
+}
+* body div.container main div.success-message h3 {
+  color: hsl(278deg, 68%, 11%);
+  font-size: 1.6rem;
+  font-weight: lighter;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin: 2.2rem 0 0.7rem 0;
+}
+* body div.container main div.success-message p {
+  font-size: 1.05rem;
+  color: hsl(279deg, 6%, 55%);
+}
+* body div.container main div.success-message button {
+  margin: 2.5rem 0 3rem 0;
 }
 
 @media (min-width: 768px) {
@@ -248,5 +277,8 @@
   * body div.container main form div.input-wrapper {
     margin-top: 0rem;
     margin-bottom: 2.5rem;
+  }
+  * body div.container main div.success-message button {
+    width: 21rem;
   }
 }/*# sourceMappingURL=main.css.map */

@@ -120,7 +120,6 @@ $very-dark-violet: hsl(278, 68%, 11%);
                         }
                     }
 
-
                     label, 
                     legend {
                         text-transform: uppercase;
@@ -198,19 +197,51 @@ $very-dark-violet: hsl(278, 68%, 11%);
                         div.input-field {
                             width: 50%;
                         }
+                    }
+                }
 
-                        
+                button {
+                    cursor: pointer;
+                    color: $white;
+                    width: 100%;
+                    border-style: solid;
+                    border-width: 1px;
+                    border-radius: .35rem;
+                    padding: .8rem;
+                    background-color: $very-dark-violet;
+                    
+                    &:active {
+                        transform: scale(0.95);
+                        opacity: .9;
+                    }
+                }
+
+                div.success-message {
+                    display: none;
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 1rem;
+
+                    img {
+                        margin-top: 1.4rem;
+                    }
+
+                    h3 {
+                        color: $very-dark-violet;
+                        font-size: 1.6rem;
+                        font-weight: lighter;
+                        text-transform: uppercase;
+                        letter-spacing: .2rem;
+                        margin: 2.2rem 0 .7rem 0;
+                    }
+
+                    p {
+                        font-size: 1.05rem;
+                        color: $dark-grayish-violet;
                     }
 
                     button {
-                        color: $white;
-                        width: 100%;
-                        border-style: solid;
-                        border-width: 1px;
-                        border-radius: .35rem;
-                        padding: .8rem;
-                        background-color: $very-dark-violet;
-                        
+                        margin: 2.5rem 0 3rem 0
                     }
                 }
             }
@@ -311,6 +342,12 @@ $very-dark-violet: hsl(278, 68%, 11%);
                         div.input-wrapper {
                             margin-top: 0rem;
                             margin-bottom: 2.5rem;
+                        }
+                    }
+
+                    div.success-message {
+                        button {
+                            width: 21rem;
                         }
                     }
                 }
